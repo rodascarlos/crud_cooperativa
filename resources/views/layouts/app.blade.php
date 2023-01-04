@@ -30,7 +30,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('usuarios.index') }}">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('productos.index') }}">Catalago Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('clientes.index') }}">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('caracteristicaproductos.index') }}">Producto Adquirido/Ofrecido</a>
+                        </li>   
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -48,6 +59,7 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
+                            
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
