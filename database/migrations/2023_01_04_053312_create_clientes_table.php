@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
+            $table->string('nombres');
+            $table->string('apellidos');
+            $table->string('dpi', 13)->unique();
+            $table->date('nacimiento');
+            $table->string('telefono', 8);
+            $table->string('direccion');
+            $table->unsignedBigInteger('tipocliente_id');
+            $table->$table->foreign('tipocliente_id')->references('id')->on('tipoclientes')->onDelete('cascade');
             $table->timestamps();
         });
     }
