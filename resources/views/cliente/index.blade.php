@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $clientes->links() !!}
+                {!! $clientes->links('pagination::bootstrap-5') !!}
             </div>
         </div>
     </div>

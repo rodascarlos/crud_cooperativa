@@ -21,7 +21,7 @@ class CaracteristicaproductoController extends Controller
      */
     public function index()
     {
-        $caracteristicaproductos = Caracteristicaproducto::paginate();
+        $caracteristicaproductos = Caracteristicaproducto::paginate(10);
 
         return view('caracteristicaproducto.index', compact('caracteristicaproductos'))
             ->with('i', (request()->input('page', 1) - 1) * $caracteristicaproductos->perPage());

@@ -18,7 +18,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuario::paginate();
+        $usuarios = Usuario::paginate(10);
 
         return view('usuario.index', compact('usuarios'))
             ->with('i', (request()->input('page', 1) - 1) * $usuarios->perPage());

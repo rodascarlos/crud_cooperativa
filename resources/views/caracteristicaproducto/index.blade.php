@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $caracteristicaproductos->links() !!}
+                {!! $caracteristicaproductos->links('pagination::bootstrap-5') !!}
             </div>
         </div>
     </div>
