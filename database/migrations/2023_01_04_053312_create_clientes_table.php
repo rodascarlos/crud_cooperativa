@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('telefono', 8);
             $table->string('direccion');
             $table->unsignedBigInteger('tipocliente_id');
-            $table->$table->foreign('tipocliente_id')->references('id')->on('tipoclientes')->onDelete('cascade');
+            $table->foreign('tipocliente_id')->references('id')->on('tipoclientes')->onDelete('cascade');
             $table->timestamps();
         });
     }
