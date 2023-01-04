@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Caracteristicaproducto;
+use App\Models\Usuario;
+use App\Models\Producto;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +35,10 @@ class CaracteristicaproductoController extends Controller
     public function create()
     {
         $caracteristicaproducto = new Caracteristicaproducto();
-        return view('caracteristicaproducto.create', compact('caracteristicaproducto'));
+        $usuarios = Usuario::pluck('nombres', 'id');
+        $productos = Producto::pluck('titulo', 'id');
+        $clientes = Cliente::pluck('nombres', 'id');
+        return view('caracteristicaproducto.create', compact('caracteristicaproducto', 'usuarios', 'productos', 'clientes'));
     }
 
     /**
@@ -73,8 +79,10 @@ class CaracteristicaproductoController extends Controller
     public function edit($id)
     {
         $caracteristicaproducto = Caracteristicaproducto::find($id);
-
-        return view('caracteristicaproducto.edit', compact('caracteristicaproducto'));
+        $usuarios = Usuario::pluck('nombres', 'id');
+        $productos = Producto::pluck('titulo', 'id');
+        $clientes = Cliente::pluck('nombres', 'id');
+        return view('caracteristicaproducto.edit', compact('caracteristicaproducto', 'usuarios', 'productos', 'clientes'));
     }
 
     /**

@@ -42,7 +42,7 @@
 										<th>Nacimiento</th>
 										<th>Telefono</th>
 										<th>Direccion</th>
-										<th>Tipocliente Id</th>
+										<th>Tipo de cliente</th>
 
                                         <th></th>
                                     </tr>
@@ -58,7 +58,7 @@
 											<td>{{ $cliente->nacimiento }}</td>
 											<td>{{ $cliente->telefono }}</td>
 											<td>{{ $cliente->direccion }}</td>
-											<td>{{ $cliente->tipocliente_id }}</td>
+											<td>{{ $cliente->tipocliente->titulo }}</td>
 
                                             <td>
                                                 <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">

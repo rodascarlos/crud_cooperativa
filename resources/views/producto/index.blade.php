@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Titulo</th>
-										<th>Categoria Id</th>
+										<th>Categoria</th>
 
                                         <th></th>
                                     </tr>
@@ -48,7 +48,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $producto->titulo }}</td>
-											<td>{{ $producto->categoria_id }}</td>
+											<td>{{ $producto->categoria->titulo }}</td>
 
                                             <td>
                                                 <form action="{{ route('productos.destroy',$producto->id) }}" method="POST">

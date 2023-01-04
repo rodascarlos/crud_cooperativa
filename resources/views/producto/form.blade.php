@@ -7,8 +7,8 @@
             {!! $errors->first('titulo', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('categoria_id') }}
-            {{ Form::text('categoria_id', $producto->categoria_id, ['class' => 'form-control' . ($errors->has('categoria_id') ? ' is-invalid' : ''), 'placeholder' => 'Categoria Id']) }}
+            {{ Form::label('categoria') }}
+            {{ Form::select('categoria_id', $categorias, $producto->categoria_id, ['class' => 'form-control' . ($errors->has('categoria_id') ? ' is-invalid' : ''), 'placeholder' => 'Selecciona una categoria']) }}
             {!! $errors->first('categoria_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

@@ -35,13 +35,13 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Nombre</th>
+										
 										<th>Fecha Contactado</th>
 										<th>Fecha Presentara</th>
-										<th>Usuario Id</th>
-										<th>Cliente Id</th>
-										<th>Producto Id</th>
+										<th>Usuario encargado</th>
+										<th>Cliente</th>
+										<th>Producto ofrecido</th>
+                                        <th>Comentarios</th>
 
                                         <th></th>
                                     </tr>
@@ -51,12 +51,13 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $caracteristicaproducto->nombre }}</td>
+											
 											<td>{{ $caracteristicaproducto->fecha_contactado }}</td>
 											<td>{{ $caracteristicaproducto->fecha_presentara }}</td>
-											<td>{{ $caracteristicaproducto->usuario_id }}</td>
-											<td>{{ $caracteristicaproducto->cliente_id }}</td>
-											<td>{{ $caracteristicaproducto->producto_id }}</td>
+											<td>{{ $caracteristicaproducto->usuario->nombres }}</td>
+											<td>{{ $caracteristicaproducto->cliente->nombres }}</td>
+											<td>{{ $caracteristicaproducto->producto->titulo }}</td>
+                                            <td>{{ $caracteristicaproducto->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('caracteristicaproductos.destroy',$caracteristicaproducto->id) }}" method="POST">

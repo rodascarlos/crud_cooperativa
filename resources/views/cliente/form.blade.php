@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('nacimiento') }}
-            {{ Form::text('nacimiento', $cliente->nacimiento, ['class' => 'form-control' . ($errors->has('nacimiento') ? ' is-invalid' : ''), 'placeholder' => 'Nacimiento']) }}
+            {{ Form::date('nacimiento', $cliente->nacimiento, ['class' => 'form-control' . ($errors->has('nacimiento') ? ' is-invalid' : ''), 'placeholder' => 'Nacimiento']) }}
             {!! $errors->first('nacimiento', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -32,8 +32,8 @@
             {!! $errors->first('direccion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('tipocliente_id') }}
-            {{ Form::text('tipocliente_id', $cliente->tipocliente_id, ['class' => 'form-control' . ($errors->has('tipocliente_id') ? ' is-invalid' : ''), 'placeholder' => 'Tipocliente Id']) }}
+            {{ Form::label('tipocliente') }}
+            {{ Form::select('tipocliente_id', $tipoclientes,$cliente->tipocliente_id, ['class' => 'form-control' . ($errors->has('tipocliente_id') ? ' is-invalid' : ''), 'placeholder' => 'Selecciona el tipo de cliente']) }}
             {!! $errors->first('tipocliente_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
